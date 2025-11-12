@@ -9,14 +9,18 @@ def calculate_demographic_data(print_data=True):
     race_count = df['race'].value_counts()
     
     # What is the average age of men?
-    average_age_men = df[['men','age']].stack().mean()
+    df[df['sex'] == 'Male']['age'].mean()
+
     # What is the percentage of people who have a Bachelor's degree?
-    percentage_bachelors = df[df['education'] == 'Bachelors'].shape[0] /len(df) * 100
-    print(f"{percentage_bachelors:.2f%})
+    percentage_bachelors = (df[df['education'] == 'Bachelors'].shape[0] / len(df)) * 100
+    print(f"{percentage_bachelors:.2f}%")
 
     # What percentage of people with advanced education (`Bachelors`, `Masters`, or `Doctorate`) make more than 50K? 
-    # What percentage of people without advanced education make more than 50K?
+    advanced = df[df['education'].isin(['bachelor', 'masters', 'doctorates'])]
+    pertantage_advanced = (advanced[advanced['salary'] == '>50k' ].shape[0] / advanced.shape[0]) * 100
 
+    # What percentage of people without advanced education make more than 50K?
+    df[~'education_num'].isin(13,14,16) & (df['salary'] == '>50k').shape[0] /len(df) * 100
     # with and without `Bachelors`, `Masters`, or `Doctorate`
     higher_education = None
     lower_education = None
