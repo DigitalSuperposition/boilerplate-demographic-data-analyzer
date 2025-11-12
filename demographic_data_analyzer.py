@@ -20,7 +20,8 @@ def calculate_demographic_data(print_data=True):
     pertantage_advanced = (advanced[advanced['salary'] == '>50k' ].shape[0] / advanced.shape[0]) * 100
 
     # What percentage of people without advanced education make more than 50K?
-    df[~'education_num'].isin(13,14,16) & (df['salary'] == '>50k').shape[0] /len(df) * 100
+    non_advanced =df[~df['education'].isin(['Bachelors', 'Masters', 'Doctorate'])]
+    percentage_non_advanced = (non_advanced[non_advanced['salary'] == '>50k'].shape[0] / non_advanced.shap[0]) * 100
     # with and without `Bachelors`, `Masters`, or `Doctorate`
     higher_education = None
     lower_education = None
