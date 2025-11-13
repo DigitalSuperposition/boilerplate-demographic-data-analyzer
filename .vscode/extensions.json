@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "ms-python.python",            // Python language support
+    "ms-toolsai.jupyter",          // Jupyter notebooks (great for data/table viewing)
+    "donjayamanne.python-extension-pack", // Optional: extra Python tools
+    "formulahendry.code-runner",   // Run Python scripts easily
+    "bierner.markdown-preview-github-styles" // Optional: nice table formatting in markdown
+  ]
+}
