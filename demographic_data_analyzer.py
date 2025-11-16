@@ -9,19 +9,18 @@ def calculate_demographic_data(print_data=True):
     race_count = df['race'].value_counts()
     
     # What is the average age of men?
-    df[df['sex'] == 'Male']['age'].mean()
+    average_age_men = df[df['sex'] == 'Male']['age'].mean()
 
     # What is the percentage of people who have a Bachelor's degree?
-    percentage_bachelors = (df[df['education'] == 'Bachelors'].shape[0] / len(df)) * 100
-    print(f"{percentage_bachelors:.2f}%")
-
+    percentage_bachelors = (df[df['education'] == 'Bachelors'].shape[0] / len(df)) * 100, round(percentage_bachelors, 0)
+  
     # What percentage of people with advanced education (`Bachelors`, `Masters`, or `Doctorate`) make more than 50K? 
-    advanced = df[df['education'].isin(['bachelor', 'masters', 'doctorates'])]
-    pertantage_advanced = (advanced[advanced['salary'] == '>50k' ].shape[0] / advanced.shape[0]) * 100
+    higher_education = df[df['education'].isin(['bachelor', 'masters', 'doctorates'])]
+    higher_education_rich = (higher_education[higher_education['salary'] == '>50k' ].shape[0] / higher_education.shape[0]) * 100
 
     # What percentage of people without advanced education make more than 50K?
-    non_advanced = df[~df['education'].isin(['Bachelors', 'Masters', 'Doctorate'])]
-    lower_education_rich = (non_advanced[non_advanced['salary'] == '>50k'].shape[0] / non_advanced.shap[0]) * 100
+    lower_education = df[~df['education'].isin(['Bachelors', 'Masters', 'Doctorate'])]
+    lower_education_rich = (higher_education[higher_education['salary'] == '>50k'].shape[0] / higher_education.shape[0]) * 100
     
     # with and without `Bachelors`, `Masters`, or `Doctorate`
     higher_education = None
