@@ -1,9 +1,11 @@
 {
   "recommendations": [
-    "ms-python.python",            // Python language support
-    "ms-toolsai.jupyter",          // Jupyter notebooks (great for data/table viewing)
+    "ms-python.python",                  // Python language support
+    "ms-toolsai.jupyter",                // Jupyter notebooks
+    "GrapeCity.gc-excelviewer",          // Excel/CSV viewer from GrapeCity
+    "oaejlin.vscode-excel",              // Excel viewer from database-client.com
     "donjayamanne.python-extension-pack", // Optional: extra Python tools
-    "formulahendry.code-runner",   // Run Python scripts easily
-    "bierner.markdown-preview-github-styles" // Optional: nice table formatting in markdown
+    "formulahendry.code-runner",         // Run Python scripts easily
+    "bierner.markdown-preview-github-styles" // Optional: markdown table formatting
   ]
 }
